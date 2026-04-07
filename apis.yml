@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: apishare:apishare
     name: ApiShare
-    tags:
-      - API
+    tags: []
     humanURL: https://www.apishare.cloud/
     properties:
       - url: https://www.apishare.cloud/
