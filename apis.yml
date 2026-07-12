@@ -46,6 +46,8 @@ apis:
       gateways (Boomi, Red Hat 3scale, Azure, Kong) and identity providers (Azure
       Entra ID, KeyCloak, Oracle Access Management) without replacing existing systems.
 common:
+  - type: DomainSecurity
+    url: security/apishare-domain-security.yml
   - type: Documentation
     url: https://www.apishare.cloud/documentation-1.12
   - type: Pricing
