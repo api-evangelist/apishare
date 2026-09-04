@@ -23,22 +23,24 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: freemium
+  pricing: paid
   onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Freemium
+  label: Paid
   confidence: medium
   source:
   - plans
-  generated: '2026-07-22'
+  - rate-limits
+  - security
+  generated: '2026-09-04'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apishare.png
 access: 3rd-Party
 created: '2025-01-08'
 modified: '2026-04-19'
-position: Consumer
+position: Consuming
 description: >-
   ApiShare is an API governance platform that provides a unified operational model
   for API lifecycle management, access control, catalog management, and asset reuse
@@ -55,10 +57,11 @@ apis:
       - Governance
       - Internal Developer Platform
     humanURL: https://www.apishare.cloud/
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apishare.png
     properties:
-      - url: https://www.apishare.cloud/documentation-1.12
+      - url: https://www.apishare.cloud/documentation-2.1
         type: Documentation
-      - url: https://www.apishare.cloud/documentation-1.12
+      - url: https://www.apishare.cloud/doc2.1/getting-started-introduction-2-1
         type: GettingStarted
       - url: https://www.apishare.cloud/pricing
         type: Pricing
@@ -71,8 +74,30 @@ apis:
 common:
   - type: DomainSecurity
     url: security/apishare-domain-security.yml
+  - type: TrustCenter
+    url: security/apishare-trust-center.yml
+  - type: Conformance
+    url: conformance/apishare-conformance.yml
+  - type: Compliance
+    url: https://www.apishare.cloud/certifications
+  - type: Lifecycle
+    url: lifecycle/apishare-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/apishare-changelog.yml
+  - type: Plans
+    url: plans/apishare-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apishare-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/apishare-llms.txt
+  - type: Support
+    url: https://www.apishare.cloud/contacts
+  - type: PrivacyPolicy
+    url: https://www.apishare.cloud/privacy
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/72734885
   - type: Documentation
-    url: https://www.apishare.cloud/documentation-1.12
+    url: https://www.apishare.cloud/documentation-2.1
   - type: Pricing
     url: https://www.apishare.cloud/pricing
   - type: Blog
@@ -135,3 +160,29 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.23'
+x-enrichment:
+  date: '2026-09-04'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: covered
+  reason: no-machine-readable-spec
+  detail: >-
+    ApiShare sells API governance software and publishes a full, server-rendered
+    product documentation set, a dated release-note page and a two-tier pricing
+    page — but it operates no public API of its own: no developer portal, no API
+    reference, no OpenAPI/AsyncAPI/GraphQL contract, no SDK in any registry, and
+    every /.well-known/ path 404s on www.apishare.cloud while api.apishare.cloud
+    (a Kong gateway) answers a blanket anonymous 403 to every request including a
+    negative control.
+  evidence:
+    - url: https://www.apishare.cloud/documentation-2.1
+      status: 200
+    - url: https://www.apishare.cloud/.well-known/api-catalog
+      status: 404
+    - url: https://api.apishare.cloud/openapi.json
+      status: 403
+    - url: https://www.apishare.cloud/llms.txt
+      status: 404
+  checked: '2026-09-04'
