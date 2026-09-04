@@ -1,0 +1,41 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org/pypi/apishare/json, GitHub code search
+  (apishare in:name,description), and the ApiShare documentation and pricing
+  pages. No SDK, CLI or SourceCode link exists in apis.yml to derive from.
+description: >-
+  ApiShare publishes no client libraries. It sells a hosted/installed governance
+  platform with no public API, so there is nothing for an SDK to wrap. Searched
+  npm (0 results for "apishare"), PyPI, and GitHub; the documentation names no
+  SDK, CLI, or package, and the site links no first-party source repository.
+  No SDKs pointer is emitted — an empty package set is a recorded absence, not
+  a distribution surface.
+package_count: 0
+official_count: 0
+packages: []
+rejected_candidates:
+  - name: apishare
+    registry: pypi
+    url: https://pypi.org/project/apishare/
+    version: 0.2.0
+    published: '2025-01-07'
+    official: false
+    reason: >-
+      OWNERSHIP CHECK FAILED — name collision only. The PyPI project "apishare"
+      is "A Python package for financial market data access" by chengangqiang
+      (chengq@niututu.com), homepage https://www.apishare.cn. Different company,
+      different domain, different product category. Not ApiShare (apishare.cloud).
+  - name: apishare (GitHub repositories)
+    registry: github
+    official: false
+    reason: >-
+      GitHub search returns 24 repositories matching "apishare"; none is owned by
+      an ApiShare/apishare.cloud organization, and several are unrelated
+      SharePoint or file-sharing projects. The only relevant hit is
+      api-evangelist/apishare — this profile repository.
+registries_searched:
+  - {registry: npm, query: apishare, results: 0, status: 200}
+  - {registry: pypi, name: apishare, status: 200, outcome: rejected-different-owner}
+  - {registry: pypi, name: api-share, status: 404}
+  - {registry: github, query: 'apishare in:name,description', results: 24, outcome: no-first-party-org}

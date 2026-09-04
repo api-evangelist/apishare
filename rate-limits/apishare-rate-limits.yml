@@ -4,10 +4,15 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: ApiShare
 providerId: apishare
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-04'
+generated: '2026-09-04'
+method: searched
+source: >-
+  https://www.apishare.cloud/pricing, https://www.apishare.cloud/documentation-2.1
+  and the full 2.1 documentation set, https://www.apishare.cloud/release-note
+# 2026-09-04: replaced the 2026-05-04 bulk-sweep scaffold, which asserted
+# X-RateLimit-* / RateLimit-Policy response headers and per-tier request quotas
+# that ApiShare has never published. See roadmap#35.
 tags:
   - API Governance
   - API Lifecycle
@@ -19,76 +24,34 @@ tags:
   - Rate Limiting
   - Quotas
   - Throttling
-description: Machine-readable rate limit definitions for the ApiShare API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - ApiShare
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - ApiShare
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - ApiShare
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - ApiShare
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - ApiShare
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+description: >-
+  ApiShare publishes no rate limits. It has no public API contract and no
+  developer reference, so there is no documented request ceiling, window, burst
+  allowance, exhaustion status code, or rate-limit response header anywhere on
+  its site or in its 2.1 documentation set. The only published consumption axis
+  is commercial, not runtime: subscriptions are sized by the total number of
+  digital products and assets in incremental bands (250 / 500 / 1000 / 1500 /
+  TOP) — that is a catalog-size band, not a request rate. An honest zero.
+limit_count: 0
+headers: {}
+limits: []
+exhaustion:
+  status_code: null
+  retry_after: false
+notes:
+  - >-
+    Rate limiting IS a product capability ApiShare governs on behalf of its
+    customers — the platform configures gateway-level policies (including
+    IP-based filtering rules applied on subscription activation, release 1.12)
+    on Boomi, Red Hat 3scale, Azure API Management and Kong. Those limits belong
+    to the customer's gateway, not to an ApiShare API.
+  - >-
+    api.apishare.cloud resolves to a Kong gateway and returns a blanket
+    anonymous 403, so no live rate-limit header could be observed either.
+x-evidence:
+  - {url: 'https://www.apishare.cloud/pricing', status: 200, fetched: '2026-09-04'}
+  - {url: 'https://www.apishare.cloud/documentation-2.1', status: 200, fetched: '2026-09-04'}
+  - {url: 'https://api.apishare.cloud/', status: 403, fetched: '2026-09-04'}
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

@@ -1,0 +1,32 @@
+generated: '2026-09-04'
+method: searched
+status: none
+source: >-
+  https://www.apishare.cloud/pricing, https://www.apishare.cloud/features,
+  https://www.apishare.cloud/release-note, web search for an ApiShare MCP server
+description: >-
+  ApiShare GOVERNS MCP servers; it does not publish one. The pricing page lists
+  "All (APIs, Assets, Applications, MCP Servers, etc.)" as the set of digital
+  products the Govern & Scale tier catalogs, and the marketing copy positions the
+  platform as the place to "design, organize and govern APIs, Agents and MCP
+  servers". The AI capabilities ApiShare ships (Discovery Expert, Design Expert,
+  Process Expert, Compliance Expert, Consumer Support Expert) are in-product
+  assistants reached through the ApiShare UI, not an MCP endpoint an external
+  agent can call. No hosted MCP URL, no stdio package, and no MCP configuration
+  snippet appears anywhere on the site or in the documentation, and no
+  first-party package exists in any registry to install one from.
+  No candidate tool list was derived: ApiShare publishes no OpenAPI to derive
+  operations from. No MCPServer pointer is emitted.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+server: null
+tools: []
+x-evidence:
+  - {url: 'https://www.apishare.cloud/pricing', status: 200, fetched: '2026-09-04', note: 'lists MCP Servers as a governed asset type'}
+  - {url: 'https://www.apishare.cloud/features', status: 200, fetched: '2026-09-04', note: 'no MCP endpoint or install instruction'}
+  - {url: 'https://api.apishare.cloud/', status: 403, fetched: '2026-09-04', note: 'gateway host answers a blanket 403 to every anonymous request'}

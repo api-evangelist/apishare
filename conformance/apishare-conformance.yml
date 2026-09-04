@@ -1,0 +1,100 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  https://www.apishare.cloud/certifications,
+  https://www.apishare.cloud/release-note,
+  https://www.apishare.cloud/doc2.1/core-concepts-api-governance-key-set-management-2-1,
+  https://www.apishare.cloud/doc2.1/custom-connectors-oracle-identity-governance-2-1,
+  live /.well-known/ probe (well-known/apishare-well-known.yml)
+description: >-
+  Standards and certification claims ApiShare publishes about itself. The ISO
+  entries are named on ApiShare's own certifications page and are the strongest
+  compliance signal this provider publishes. The protocol entries are recorded
+  as they appear in the product documentation — ApiShare integrates with
+  OAuth2/OIDC identity providers and issues OAuth2 client-credential keysets to
+  governed applications — but ApiShare exposes no public API contract of its
+  own, so none of these can be verified against a machine-readable spec, and
+  none is asserted as conformance of an ApiShare API.
+standards:
+  - id: iso-9001
+    conforms: true
+    evidence: >-
+      "ISO 9001 — Quality Management System" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-27001
+    conforms: true
+    evidence: >-
+      "ISO/IEC 27001 — Information Security Management System" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-27017
+    conforms: true
+    evidence: >-
+      "ISO/IEC 27017 — Cloud Security Controls" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-27018
+    conforms: true
+    evidence: >-
+      "ISO/IEC 27018 — Protection of Personal Data in the Cloud" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-37001
+    conforms: true
+    evidence: >-
+      "ISO 37001 — Anti-Bribery Management Systems" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-45001
+    conforms: true
+    evidence: >-
+      "ISO 45001 — Occupational Health and Safety Management" listed on
+      https://www.apishare.cloud/certifications
+  - id: iso-14001
+    conforms: true
+    evidence: >-
+      "ISO 14001 — Environmental Management Systems" listed on
+      https://www.apishare.cloud/certifications
+  - id: oauth2
+    conforms: true
+    scope: product capability, not an ApiShare-operated API
+    evidence: >-
+      ApiShare issues CLIENT_CREDENTIAL keysets (clientId / clientSecret) for
+      subscriptions and retrieves them from external identity systems —
+      https://www.apishare.cloud/doc2.1/custom-connectors-oracle-identity-governance-2-1
+  - id: oidc
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration on any ApiShare host (404 on
+      www.apishare.cloud, 403 blanket-deny on api.apishare.cloud) — see
+      well-known/apishare-well-known.yml. Federated login is supported against
+      customer-supplied IdPs (Keycloak, Azure Entra ID, Oracle Access
+      Management), but ApiShare publishes no OIDC discovery document itself.
+  - id: openapi
+    conforms: true
+    scope: product capability, not an ApiShare-operated API
+    evidence: >-
+      The ApiShare API Designer creates and lints OpenAPI/Swagger definitions
+      and supports OAS 2.0 and 3.0 —
+      https://www.apishare.cloud/doc2.1/appendices-and-references-glossary-2-1
+  - id: rfc9457
+    conforms: false
+    evidence: No public error contract or problem+json envelope is published.
+  - id: idempotency
+    conforms: false
+    evidence: No public API contract, so no documented replay-protection mechanism.
+domain_standard:
+  applicable: false
+  note: >-
+    API governance / internal developer platform tooling has no domain message
+    standard for its own market (no SCIM/OData/OpenRTB/HL7-class shape applies to
+    a governance catalog), and ApiShare declares none. Recorded as not
+    applicable rather than as a failure — this is a reward-only dimension.
+compliance:
+  certifications_page: https://www.apishare.cloud/certifications
+  attestations: >-
+    "Upon request, we can share up-to-date official documentation to support
+    vendor assessments, audits, and procurement processes." Certification
+    attestations are available on request, not published.
+  independent_audit: true
+  soc2: false
+  detail: security/apishare-trust-center.yml
+x-evidence:
+  - {url: 'https://www.apishare.cloud/certifications', status: 200, fetched: '2026-09-04'}
+  - {url: 'https://www.apishare.cloud/.well-known/openid-configuration', status: 404, fetched: '2026-09-04'}

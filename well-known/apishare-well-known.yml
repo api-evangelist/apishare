@@ -1,0 +1,107 @@
+generated: '2026-09-04'
+method: probed
+source: >-
+  Live probe of the named /.well-known/ discovery path list (plus the APIs.json
+  root paths) against every host this record knows: the registrable domain
+  apishare.cloud, its www host, and api.apishare.cloud — the only other host in
+  the *.apishare.cloud certificate-transparency set that resolves and answers.
+description: >-
+  ApiShare publishes no /.well-known/ discovery surface. www.apishare.cloud is a
+  Framer-hosted marketing/documentation site that returns a real 404 (10-byte
+  "Not found" body) for every well-known path, including a negative-control path
+  that cannot exist — so this is a genuine absence, not a catch-all 200 and not a
+  path-echoing host. apishare.cloud 301/308-redirects every path to the www host.
+  api.apishare.cloud resolves to a Kong gateway ALB in eu-west-1 and answers a
+  uniform 403 "Forbidden" (9 bytes) to every path, including the negative
+  control, so nothing anonymous is readable there. No pointer is emitted: every
+  probed path missed.
+path_echo_control: passed        # negative-control path returned 404 on www, 403 on api
+soft_404_control:
+  url: https://www.apishare.cloud/.well-known/apishare-negative-control-7f3ab91c.json
+  status: 404
+  bytes: 10
+hit_count: 0
+hosts:
+  - host: https://www.apishare.cloud
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/apis.json
+        status: 404
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/ucp.json
+        status: 404
+      - path: /.well-known/acp.json
+        status: 404
+  - host: https://apishare.cloud
+    note: >-
+      Apex host. Every probed path answered 301/308 to the equivalent path on
+      www.apishare.cloud, which 404s. No document is served from the apex.
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 308
+      - path: /.well-known/oauth-authorization-server
+        status: 308
+      - path: /.well-known/oauth-protected-resource
+        status: 308
+      - path: /.well-known/api-catalog
+        status: 308
+      - path: /.well-known/ai-plugin.json
+        status: 308
+      - path: /.well-known/apis.json
+        status: 308
+      - path: /apis.json
+        status: 308
+      - path: /apis.yml
+        status: 308
+      - path: /.well-known/aauth-resource.json
+        status: 308
+      - path: /.well-known/agent-card.json
+        status: 308
+      - path: /.well-known/agent.json
+        status: 308
+  - host: https://api.apishare.cloud
+    note: >-
+      Resolves to kong-alb-270320652.eu-west-1.elb.amazonaws.com. Every request,
+      including the negative control and the site root, returns 403 with a 9-byte
+      "Forbidden" body — a blanket anonymous deny at the gateway, not a per-path
+      answer. Nothing here is anonymously readable, so nothing is recorded as
+      served.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+      - path: /apis.json
+        status: 403

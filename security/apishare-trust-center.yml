@@ -1,0 +1,47 @@
+generated: '2026-09-04'
+method: searched
+probe: false
+source: https://www.apishare.cloud/certifications
+url: https://www.apishare.cloud/certifications
+description: >-
+  ApiShare publishes a dedicated certifications page naming seven ISO management
+  system certifications held by the company and verified by independent third
+  parties. It is a certifications page rather than a hosted trust portal — there
+  is no trust.<domain> subdomain, no downloadable report library, and no
+  self-serve NDA flow — which is why the automated trust-center probe
+  (probe-security-programs.py, run 2026-09-04) recorded trust=none. This is the
+  searched, human-verified fill. Attestation documents are supplied on request
+  for vendor assessments, audits and procurement.
+certifications:
+  - {name: ISO 9001, scope: Quality Management System, note: Structured, monitored processes focused on continuous improvement.}
+  - {name: ISO/IEC 27001, scope: Information Security Management System, note: Protecting information and managing security risks.}
+  - {name: ISO/IEC 27017, scope: Cloud Security Controls, note: Security in cloud environments and dedicated cloud controls.}
+  - {name: ISO/IEC 27018, scope: Protection of Personal Data in the Cloud, note: Privacy safeguards for personal data processed in cloud contexts.}
+  - {name: ISO 37001, scope: Anti-Bribery Management Systems}
+  - {name: ISO 45001, scope: Occupational Health and Safety Management}
+  - {name: ISO 14001, scope: Environmental Management Systems}
+not_claimed:
+  - SOC 2
+  - PCI DSS
+  - HIPAA
+  - FedRAMP
+report_access:
+  attestations: >-
+    "Certifications are subject to periodic audits and reviews by independent
+    bodies. Upon request, we can share up-to-date official documentation to
+    support vendor assessments, audits, and procurement processes."
+  self_serve: false
+  request_via: https://www.apishare.cloud/contacts
+security_practice:
+  vulnerability_assessment: >-
+    Release 2.1 (Jul 2026) records "multiple security remediations applied
+    following vulnerability assessment activities" —
+    https://www.apishare.cloud/release-note
+  key_lifecycle: >-
+    Product-level KeySet rotation/expiration scheduling, time-bound secret
+    retrieval with automatic revocation, and on-demand regeneration.
+docs:
+  - https://www.apishare.cloud/certifications
+  - https://www.apishare.cloud/release-note
+evidence:
+  - {source: 'https://www.apishare.cloud/certifications', status: 200, fetched: '2026-09-04', keywords: [iso 9001, iso/iec 27001, iso/iec 27017, iso/iec 27018, iso 37001, iso 45001, iso 14001]}

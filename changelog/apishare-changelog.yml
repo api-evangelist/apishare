@@ -1,0 +1,79 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.apishare.cloud/release-note
+description: >-
+  ApiShare publishes a dated product release-note page covering the platform
+  (not an API contract — ApiShare ships no public API reference). Releases are
+  numbered MAJOR.MINOR.PATCH and dated to the month. The documentation site
+  mirrors the release line: a version selector offers 2.1 and 2.0 and marks 1.12
+  "Out of support". This artifact records the release entries published on the
+  release-note page at fetch time; the live page is the source of truth.
+docs: https://www.apishare.cloud/release-note
+versioning:
+  scheme: semantic-ish MAJOR.MINOR.PATCH product versioning, dated to the month
+  current: 2.1.0
+  current_date: '2026-07'
+  documentation_versions: ['2.1', '2.0', '1.12']
+  out_of_support: ['1.12']
+  detail: lifecycle/apishare-lifecycle.yml
+entries:
+  - version: 2.1.0
+    date: '2026-07'
+    latest: true
+    breaking: []
+    additions:
+      - Automated user onboarding — a single invocation orchestrates entity creation and user access management, including deactivation, for integration with external identity systems and CI/CD pipelines
+      - Page Visibility Configuration — tenant admins define which frontend sections and cards are available by organization type, user role and guest scenario
+      - Catalog and Workspace filter configuration, centrally managed per user type
+    highlights:
+      - Discovery Expert consolidated for robustness and maintainability
+      - Invitations and Join Requests gained sorting, informational columns and SSO-facing unique identifier display
+      - Subscriptions accept multiple IP addresses and CIDR ranges in one request
+      - Notifications section under Administration redesigned
+      - Multiple security remediations applied following vulnerability assessment activities
+  - version: 2.0.0
+    date: '2026-04'
+    breaking: []
+    additions:
+      - AI Experts — Discovery Expert (natural-language exploration of the digital product catalog) and Design Expert (governance-aware design guidance)
+      - AI-assisted API Designer for OpenAPI with Create / Fix / Enrich, API specification templates, and configurable validation and linting
+      - Automated digital product lifecycle and versioning utilities aimed at CI/CD integration
+      - API specification reload — republish a spec without a full gateway republish for non-breaking changes
+    highlights:
+      - Policy templates extended with new logical operators including CONTAINS ANY
+      - Multi-level navigation, breadcrumbs, advanced search with sorting and filtering
+  - version: 1.12.0
+    date: '2025-12'
+    breaking: []
+    additions:
+      - Automated subscription approval with optional Business Owner and IT Owner approval steps
+      - System Settings — a centralized platform configuration area (tenant information, documentation management, SMTP, system properties)
+      - Homepage widget permissions by role
+    highlights:
+      - Administration UX redesign
+      - IP-based filtering fields on subscriptions, applied to gateway-level filtering rules on activation
+      - Subscription detail view shows organization type of consuming application and API provider
+  - version: 1.11.0
+    date: '2025-10'
+    breaking: []
+    additions:
+      - Cross-organizational roles spanning multiple organizations within a tenant
+      - Fully configurable public showcase for unauthenticated users — customizable landing page, publicly accessible API documentation, searchable/filterable catalog, read-only product detail pages
+      - Dynamic authentication via external identity providers (Keycloak, Azure AD and other federated identity systems) on gateway connectors
+      - Time-bound KeySet secrets with automatic revocation after a configurable window
+  - version: 1.9.0
+    date: '2025-05'
+    breaking: []
+    additions:
+      - KeySet automatic scheduled operations — periodic rotation and expiration
+      - KeySet notifications for rotation, expiration and regeneration events
+      - Policy template configuration for KeySets
+      - On-demand KeySet regeneration
+      - '"My Keys" personal workspace for viewing, rotating and regenerating KeySets'
+x-evidence:
+  fetched: '2026-09-04'
+  url: https://www.apishare.cloud/release-note
+  http_status: 200
+  note: >-
+    The release-note page publishes 5 release entries (2.1.0, 2.0.0, 1.12.0,
+    1.11.0, 1.9.0). Intermediate versions (1.10) are not published there.

@@ -1,0 +1,74 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  https://www.apishare.cloud/release-note,
+  https://www.apishare.cloud/documentation-2.1 (version selector),
+  https://www.apishare.cloud/doc2.1/appendices-and-references-faqs-2-1,
+  https://www.apishare.cloud/doc2.1/core-concepts-api-governance-api-lifecycle-2-1,
+  https://www.apishare.cloud/pricing
+description: >-
+  ApiShare is a governance platform, not a public API provider. What it versions
+  and supports publicly is the PRODUCT, not an API contract — there is no public
+  API reference, no dated API version header, and no machine-readable spec. The
+  lifecycle signals below are the ones ApiShare actually publishes: a numbered
+  product release line, a documentation version selector that names which
+  releases are still supported, and a support tier attached to the commercial
+  plans.
+versioning:
+  scheme: MAJOR.MINOR.PATCH product versioning, released roughly quarterly
+  applies_to: product releases (platform), not an API contract
+  current: 2.1.0
+  current_released: '2026-07'
+  mechanism: >-
+    Documentation is published per release under /documentation-<version> and
+    /doc<version>/... The version selector in the docs header is the public
+    statement of which releases are current.
+  docs: https://www.apishare.cloud/documentation-2.1
+  changelog: https://www.apishare.cloud/release-note
+  detail: changelog/apishare-changelog.yml
+support_status:
+  source: https://www.apishare.cloud/documentation-2.1
+  note: >-
+    The documentation version selector lists 2.1 and 2.0 as available and labels
+    1.12 "Out of support". This is a published support statement, but ApiShare
+    does not publish a written support-window or end-of-life POLICY document
+    (no stated N-1 window, no dated EOL calendar), so no Deprecation pointer is
+    emitted for it.
+  versions:
+    - version: '2.1'
+      status: current
+      released: '2026-07'
+    - version: '2.0'
+      status: supported
+      released: '2026-04'
+    - version: '1.12'
+      status: out-of-support
+      released: '2025-12'
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No deprecation policy, no RFC 8594 Sunset/Deprecation header documentation,
+    and no deprecation calendar are published. The product's own FAQ states that
+    ApiShare (the platform) lets customers version their APIs and keep previous
+    versions supported — that is a product capability, not a policy governing
+    ApiShare's own surface.
+  product_capability: >-
+    "ApiShare allows versioning to ensure backward compatibility. When updating
+    an API, a new version can be created while maintaining support for previous
+    versions." — https://www.apishare.cloud/doc2.1/appendices-and-references-faqs-2-1
+status_page:
+  url: null
+  probed: https://www.apishare.cloud/status
+  status: 404
+  notes: No public status or uptime page was found; /status returns the site 404 page.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: >-
+    No public SLA or numeric uptime target. The pricing page sells a "Success
+    journey" (Standard / Premiere) and product support tiers, but publishes no
+    availability commitment.
+  support_tiers: https://www.apishare.cloud/pricing
+deprecated_products: []
+deprecated_operations: []
