@@ -139,3 +139,26 @@ x-evidence:
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Design & Discover
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - term
+  - name: Govern & scale
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - term
