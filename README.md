@@ -1,4 +1,4 @@
-# ApiShare (apishare)
+# ApiShare
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,83 +66,106 @@
 
 ApiShare is an API governance platform that provides a unified operational model for API lifecycle management, access control, catalog management, and asset reuse across organizations. It operates as a native component of an Internal Developer Platform, enabling self-service, standardized, and secure API governance without replacing existing systems.
 
-**URL:** [https://www.apishare.cloud/](https://www.apishare.cloud/)
+**Areas:** API Governance · API Lifecycle · API Management · Catalog · Governance · Internal Developer Platform · Platform
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## ApiShare on APIs.io
 
-## Tags:
+Everything profiled for ApiShare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apishare/](https://apis.io/providers/apishare/)** — or go straight to one of the APIs or properties below.
 
- - API Governance, API Lifecycle, API Management, Catalog, Governance, Internal Developer Platform, Platform
+### APIs (1)
 
-## Timestamps
+- [ApiShare](https://apis.io/apis/apishare/apishare/) — ApiShare provides a unified catalog of APIs, applications, assets, MCP servers, and AI agents with role-based visibility, configurable lifecycle workflows,…
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### ApiShare
-ApiShare provides a unified catalog of APIs, applications, assets, MCP servers, and AI agents with role-based visibility, configurable lifecycle workflows, subscription management, and built-in auditability. It integrates with API gateways (Boomi, Red Hat 3scale, Azure, Kong) and identity providers (Azure Entra ID, KeyCloak, Oracle Access Management) without replacing existing systems.
+#### Security (2)
 
-**Human URL:** [https://www.apishare.cloud/](https://www.apishare.cloud/)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Apishare Domain Security](https://apis.io/security/apishare/apishare-domain-security/)
+- [Apishare Trust Center](https://apis.io/security/apishare/apishare-trust-center/)
 
- - API Governance, API Lifecycle, Catalog, Governance, Internal Developer Platform
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://www.apishare.cloud/documentation-1.12)
-- [GettingStarted](https://www.apishare.cloud/documentation-1.12)
+- [Apishare Plans Pricing](https://apis.io/plans/apishare/apishare-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apishare Rate Limits](https://apis.io/rate-limits/apishare/apishare-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apishare Finops](https://apis.io/finops/apishare/apishare-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apishare.cloud/)
+- [Documentation](https://www.apishare.cloud/documentation-2.1)
 - [Pricing](https://www.apishare.cloud/pricing)
-
-## Common Properties
-
-- [Documentation](https://www.apishare.cloud/documentation-1.12)
-- [Pricing](https://www.apishare.cloud/pricing)
+- [Support](https://www.apishare.cloud/contacts)
 - [Blog](https://www.apishare.cloud/blog)
-- [ReleaseNotes](https://www.apishare.cloud/release-note)
-- [Contact](https://www.apishare.cloud/contacts)
+- [Compliance](https://www.apishare.cloud/certifications)
+- [Privacy policy](https://www.apishare.cloud/privacy)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Unified API Catalog | Active catalog of APIs, applications, assets, MCP servers, and AI agents with role-based visibility. |
-| Lifecycle Management | Full digital product lifecycle governance from design through retirement with version control. |
-| Workflow Orchestration | Configurable workflows for product lifecycle, usage approvals, and ownership management. |
-| Subscription Management | Structured request approval workflows with automated keyset management, key rotation, grace periods, and revocation. |
-| Access Control | Role-based permissions and catalog visibility controls defining who can view digital products. |
-| Traceability and Audit | Built-in auditability and evidence collection by design. |
-| AI-Ready Architecture | Exposes digital products in governed, structured format for AI agent consumption. |
-| Live API Testing | Interactive API testing directly from the portal with live documentation. |
-| AI-Powered Agent Design Expert | AI-powered assistant for creating OpenAPI specifications. |
-| Public Marketplace Showcase | Public API discovery and showcase functionality for external consumers. |
+**Kin Score 27.9** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 57.9 |
 
-| Name | Description |
-|------|-------------|
-| API Governance at Scale | Enforce API policies, track lifecycle changes, and ensure compliance without slowing down development teams. |
-| Internal Developer Platform Integration | Operate as a native governance component within an existing Internal Developer Platform. |
-| AI Agent Governance | Apply governance to non-human users including AI agents consuming APIs and MCP servers. |
-| Multi-Domain Governance | Govern APIs and digital products across multiple organizational domains with consistent policies. |
-| API Access Management | Manage consumer subscriptions, approvals, and keyset lifecycle for API access control. |
+**Agent readiness 2.5** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Boomi API Management | Connector for governing APIs managed through the Boomi API Management gateway. |
-| Red Hat 3scale | Connector for governing APIs managed through the Red Hat 3scale API gateway. |
-| Microsoft Azure API Management | Integration with Microsoft Azure API Gateway for unified governance. |
-| Kong | Connector for governing APIs managed through the Kong API gateway. |
-| Microsoft Azure Entra ID | Identity provider integration for authentication and authorization. |
-| KeyCloak | Open-source identity provider integration for authentication. |
-| Oracle Access Management | Enterprise identity provider integration for access management. |
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apishare/](https://apis.io/providers/apishare/).
 
-**FN:** Kin Lane
+## How this profile is made
 
-**Email:** info@apievangelist.com
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ApiShare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apishare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
